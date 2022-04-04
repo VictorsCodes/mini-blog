@@ -10,9 +10,16 @@ const App = () => {
   }, []);
 
   const loadPosts = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const json = await response.json();
-    setPosts(json);
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      const json = await response.json();
+      setPosts(json);
+    } catch (err) {
+      alert("Deu erro em alguma coisa primo. xD");
+      console.log(err);
+    }
   };
   return (
     <div className="container mx-auto">
