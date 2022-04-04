@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { PostItem } from "./components/PostItem";
 import { Post } from "./types/Post";
+import { PostItem } from "./components/PostItem";
+import { api } from "./api";
 
 const App = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -11,10 +12,7 @@ const App = () => {
 
   const loadPosts = async () => {
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      const json = await response.json();
+      const json = await api.getAllPosts();
       setPosts(json);
     } catch (err) {
       alert("Deu erro em alguma coisa primo. xD");
