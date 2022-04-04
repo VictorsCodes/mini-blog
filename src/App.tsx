@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { PostItem } from "./components/PostItem";
 import { Post } from "./types/Post";
-import heartImg from "./heart.svg";
 
 const App = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -37,16 +37,7 @@ const App = () => {
       <div className="border border-white border-solid p-1 mb-20">
         <div className="px-1">
           {posts.map((post, index) => (
-            <div className="bg-white rounded mt-5 p-2 cursor-pointer hover:bg-slate-100">
-              <span className="text-xs flex justify-between">
-                #{post.id}{" "}
-                <img className="hover:scale-105 " src={heartImg} width={25} />
-              </span>
-              <h1 className="text-xl font-bold mt-3 text-slate-900" key={index}>
-                {post.title.charAt(0).toUpperCase() + post.title.slice(1)}
-              </h1>
-              <p className="mt-4 text-slate-500">- {post.body}</p>
-            </div>
+            <PostItem data={post} />
           ))}
         </div>
       </div>
