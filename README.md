@@ -5,7 +5,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![](src/blog.png)
 
 
 A page appearance with a blog just to improve the knowledge of api requests
