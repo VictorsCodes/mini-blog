@@ -26,7 +26,7 @@ const App = () => {
           Blog Victor
         </h1>
         <button
-          onClick={() => alert("Bonieky você é muito foda! xD")}
+          onClick={() => alert("Hello World!")}
           className="rounded bg-slate-900 hover:bg-slate-800 p-2 text-white"
         >
           Assinar newsletter
